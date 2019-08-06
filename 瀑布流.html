@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>瀑布流布局-JS实现</title>
+  </head>
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #container {
+      width: 100%;
+      position: relative;
+    }
+    .box {
+      width: 50%;
+      float: left;
+      padding: 5px;
+    }
+    .img_box {
+      padding: 10px;
+      border: 1px solid #ccc;
+      /* 设置阴影效果 */
+      box-shadow: 0 0 5px #ccc;
+      border-radius: 5px;
+    }
+    .title {
+      width: 100%;
+      margin-bottom: 5px;
+      /* 文字超出范围 ... */
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    img {
+      width: 130px;
+      height: auto;
+    }
+  </style>
+  <body>
+    <div id="container">
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/5-1.jpg" />
+        </div>
+      </div>
+      <!-- <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/login.png" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/login.png" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/photo.jpg" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/login.png" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/5-1.jpg" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/5-1.jpg" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/photo.jpg" />
+        </div>
+      </div>
+      <div class="box">
+        <div class="img_box">
+          <div class="title">title</div>
+          <img src="img/login.png" />
+        </div>
+      </div> -->
+    </div>
+  </body>
+  <script src="./js/ajax.js"></script>
+  <script src="./js/falls.js"></script>
+  <script>
+    //将数据渲染到页面上   页面上的内容先按常规排列
+    ajax({
+      method: "GET",
+      url: "https://api.it120.cc/small4/shop/goods/list",
+      // data: {
+      // page: 3, pageSize: 1
+      // },
+      success: function(response) {
+        var list = JSON.parse(response);
+        // // console.log(list);
+        let cot = document.getElementById("container");
+        for (let i = 0; i < list.data.length; i++) {
+          // console.log(list.data[i]);
+          cot.innerHTML +=
+            "<div class='box'><div class='box-img'><div class='title'>" +
+            list.data[i].name +
+            "</div><img src='" +
+            list.data[i].pic +
+            "' /></div></div ></div >";
+        }
+        /*
+        //首先判断是否具备加载图片的条件
+        function toload() {
+          //1 获取最后一个盒子  首先获取所有的盒子，然后获取最后一个盒子
+          let allbox = document.getElementsByClassName("box");
+          let lastbox = allbox[allbox.length - 1];
+
+          //2 求最后一个盒子自身高度的一般
+          //offsetTop则是元素的上边框与父元素的上边框的绝对距离。   当前对象到其上级层顶部的距离.
+          let lastboxh = lastbox.offsetHeight * 0.5 + lastbox.offsetTop;
+
+          //3 求出屏幕的高度
+          //clientHeight 网页(内容)可见区域高: document.documentElement.clientHeight
+          let screenh =
+            document.body.clientHeight || document.documentElement.clientHeight;
+
+          //4 求出页面偏离浏览器的高度
+          let screentop = scroll().top;
+          return lastboxh <= screenh + screentop;
+          //   console.log(lastbox, lastboxh.screenh, screentop);
+        }
+        toload();*/
+        //动态加载图片
+        // let timer1 = null;
+
+        // window.onscroll = function() {
+        //   clearTimeout(timer1);
+        //   timer1 = setTimeout(function() {});
+        // };
+      }
+    });
+    //
+  </script>
+</html>

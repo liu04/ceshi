@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      #mian {
+        column-count: 2;
+        column-gap: 30px;
+        display: inline-block;
+      }
+      .box {
+        width: 50%;
+        padding: 5px 1px;
+      }
+      .box-img {
+        width: 150px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 5px #ccc;
+        border-radius: 5px;
+      }
+      img {
+        width: 150px;
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mian">
+      <div class="content">
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/5-1.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/login.png" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/photo.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/login.png" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/photo.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/5-1.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/photo.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/login.png" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/5-1.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/login.png" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/5-1.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/photo.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/5-1.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/login.png" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/photo.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/5-1.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/photo.jpg" />
+          </div>
+        </div>
+        <div class="box">
+          <div class="box-img">
+            <div class="title">title</div>
+            <img src="img/login.png" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    //获取最外层的main
+    var main = document.getElementById("main");
+    //获取content
+    var content = document.getElementsByClassName("content");
+    //上拉加载
+    content.addEventListener("scroll", function() {
+      if (div.scrollHeight - div.scrollTop < 1000) {
+        setTimeout(() => {
+          console.log("正在刷新");
+        }, 200);
+      }
+    });
+    //下拉刷新
+  </script>
+</html>
